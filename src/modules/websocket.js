@@ -265,7 +265,7 @@ const Websocket = superclass => class extends superclass {
       // handle data message. Pass the data to the call back method from user
       // It could be useful to store the original messages from server for debug
       ws.on('message', data => {
-        callbacks.message && callbacks.message(data.toString())
+        callbacks.message && callbacks.message(data.toString(), url)
       })
 
       ws.on('ping', () => {
